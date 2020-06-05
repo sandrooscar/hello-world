@@ -2,6 +2,7 @@ package br.com.posthaus.stream.java;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -34,6 +35,20 @@ public class ExemploStream {
 				.filter( p -> p.getTotalPedido() > 1500)
 				.collect(Collectors.toList());
 		System.out.println(pedCollect.size());
+		
+	       // Creating an empty HashMap 
+        HashMap<Integer, Pedido> hash_map = new HashMap<Integer, Pedido>(); 
+  
+        // Mapping string values to int keys 
+        hash_map.put(10, pedidos.get(0)); 
+        hash_map.put(15, pedidos.get(1)); 
+        hash_map.put(20, pedidos.get(2)); 
+  
+        // Displaying the HashMap 
+        System.out.println("Initial Mappings are: " + hash_map); 
+  
+        // Using entrySet() to get the set view 
+        System.out.println("The set is: " + hash_map.entrySet());
 		
 		
 	}
